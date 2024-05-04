@@ -1,0 +1,43 @@
+input CreateProduct {
+	ProductName: String!
+	Description: String!
+	Price: Int!
+	Category: String!
+	Stock: Int!
+}
+
+input DeleteProduct {
+	ProductId: String!
+}
+
+input GetProductId {
+	ProductId: String!
+}
+
+input UpdateProduct {
+	ProductId: String!
+	UpdateValue: getItems!
+}
+
+input getItems {
+	ProductName: String!
+	Description: String!
+	Price: Int!
+	Category: String!
+	Stock: Int!
+}
+
+type Mutation {
+	createProduct(input: CreateProduct!): AWSJSON
+	updateProduct(input: UpdateProduct!): AWSJSON
+	deleteProduct(input: DeleteProduct!): AWSJSON
+}
+
+type Query {
+	readProduct(input: GetProductId!): AWSJSON
+}
+
+schema {
+	query: Query
+	mutation: Mutation
+}

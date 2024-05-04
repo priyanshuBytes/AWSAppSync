@@ -20,11 +20,11 @@ input UpdateProduct {
 }
 
 input getItems {
-	ProductName: String!
-	Description: String!
-	Price: Int!
-	Category: String!
-	Stock: Int!
+	ProductName: String
+	Description: String
+	Price: Int
+	Category: String
+	Stock: Int
 }
 
 type Mutation {
